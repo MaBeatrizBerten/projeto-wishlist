@@ -38,14 +38,14 @@ public class ItemController {
         itemRepository.deleteById(id); //apaga o item com aquele id do banco
     }
 
-    @PutMapping("/{id}")
-    public Item atualizar(@PathVariable Long id, @RequestBody Item itemAtualizado) {
-        Item item = itemRepository.findById(id).orElseThrow();
+    @PutMapping("/{id}") // responde em /itens/1, /itens/2, etc.
+    public Item atualizar(@PathVariable Long id, @RequestBody Item itemAtualizado) { // pega o id da URL e o JSON com os novos dados
+        Item item = itemRepository.findById(id).orElseThrow(); // busca o item no banco pelo id
         item.setNome(itemAtualizado.getNome());
         item.setPreco(itemAtualizado.getPreco());
         item.setLink(itemAtualizado.getLink());
         item.setPrioridade(itemAtualizado.getPrioridade());
-        item.setImagem(itemAtualizado.getImagem());
-        return itemRepository.save(item);
+        item.setImagem(itemAtualizado.getImagem()); // atualiza todos os campos
+        return itemRepository.save(item); // salva as alterações e retorna o item atualizado
     }
 }
