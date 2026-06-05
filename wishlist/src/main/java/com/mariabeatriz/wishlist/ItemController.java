@@ -32,4 +32,20 @@ public class ItemController {
     public Item salvar(@RequestBody Item item) { // pega o JSON que vai vir na requisição e transforma em um objeto Item
         return itemRepository.save(item); // salva o item no banco de dados e retorna ele com o id gerado
     }
+
+    @DeleteMapping("/{id}") //responde em /itens/1, /itens/2, etc.
+    public void deletar(@PathVariable Long id) { //pega o número que vem na URL e usa como id
+        itemRepository.deleteById(id); //apaga o item com aquele id do banco
+    }
+
+    @PutMapping("/{id}")
+    public Item atualizar(@PathVariable Long id, @RequestBody Item itemAtualizado) {
+        Item item = itemRepository.findById(id).orElseThrow();
+        item.setNome(itemAtualizado.getNome());
+        item.setPreco(itemAtualizado.getPreco());
+        item.setLink(itemAtualizado.getLink());
+        item.setPrioridade(itemAtualizado.getPrioridade());
+        item.setImagem(itemAtualizado.getImagem());
+        return itemRepository.save(item);
+    }
 }
