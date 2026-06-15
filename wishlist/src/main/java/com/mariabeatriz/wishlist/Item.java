@@ -1,9 +1,7 @@
 package com.mariabeatriz.wishlist;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.persistence.Column;
 
 @Entity
 public class Item {
@@ -17,8 +15,10 @@ public class Item {
 
     private String nome;
     private double preco;
+    @Column(length = 1000)
     private String link;
     private String prioridade;
+    @Column(length = 1000)
     private String imagem;
 
     public Long getId() {

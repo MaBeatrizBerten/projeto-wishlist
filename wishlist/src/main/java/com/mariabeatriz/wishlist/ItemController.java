@@ -2,9 +2,11 @@ package com.mariabeatriz.wishlist;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 // @RestController: define que esta classe é o 'Garçom' da API (Controlador REST).
 // Ela recebe os pedidos (requisições) e devolve as respostas em formato JSON (texto padronizado).
 @RestController
