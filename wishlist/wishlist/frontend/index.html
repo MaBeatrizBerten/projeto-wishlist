@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bia Wishlist</title>
+
+    <link rel="icon" type="image/png" href="img/totoro-sleeping.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <img
+            src="img/totoro-sleeping.png"
+            alt="Totoro sleeping"
+            class="sprite"
+          />
+          <span class="brand-name">Bia Wishlist</span>
+        </div>
+        <nav class="header-nav">
+          <a href="#lista">Minha Lista</a>
+          <a href="#adicionar" class="btn-nav">+ Adicionar</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <span class="hero-tag"
+          >✨ Uma lista de desejos cuidadosamente escolhidos</span
+        >
+        <h1>Wishlist de <br /><em>Maria Beatriz</em></h1>
+        <p>
+          Uma coleção de coisas que me encantam, organizadas com carinho para
+          quem quer me presentear.
+        </p>
+        <div class="hero-buttons">
+          <a href="#adicionar" class="btn-primary">+ Adicionar Desejo</a>
+          <a href="#lista" class="btn-secondary">Ver Lista →</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="img/totoro-hero.png" alt="Totoro" />
+        <img src="img/soot-sprite.png" alt="Soot" class="soot-left" />
+        <img src="img/soot-sprite.png" alt="Soot" class="soot-right" />
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat-card">
+        <img src="img/soot-sprite.png" alt="" class="stat-icon" />
+        <div>
+          <div class="stat-number" id="total-itens">0</div>
+          <div class="stat-label">Desejos</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <img src="img/soot-sprite.png" alt="" class="stat-icon" />
+        <div>
+          <div class="stat-number" id="total-urgentes">0</div>
+          <div class="stat-label">Urgentes</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <img src="img/soot-sprite.png" alt="" class="stat-icon" />
+        <div>
+          <div class="stat-number" id="total-valor">R$ 0</div>
+          <div class="stat-label">Total</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTA -->
+    <section class="section-lista" id="lista">
+      <div class="section-header">
+        <div>
+          <h2>Minha Wishlist 🍃</h2>
+          <p>Algumas coisinhas guardadas sob a árvore de cânfora.</p>
+        </div>
+      </div>
+      <div class="cards-grid" id="lista-itens">
+        <!-- Cards gerados pelo JavaScript -->
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO -->
+    <section class="section-form" id="adicionar">
+      <h2>Adicionar Novo Desejo 🌿</h2>
+      <div class="form-grid">
+        <input type="text" id="nome" placeholder="Nome do item" />
+        <input
+          type="number"
+          id="preco"
+          placeholder="Preço (ex: 99.90)"
+          step="0.01"
+        />
+        <input type="text" id="link" placeholder="Link do produto" />
+        <input type="text" id="imagem" placeholder="URL da imagem" />
+        <input
+          type="text"
+          id="prioridade"
+          placeholder="Prioridade (ex: Urgente, Média, Sonho)"
+        />
+        <button onclick="salvarItem()" class="btn-primary">
+          🌿 Adicionar à Floresta
+        </button>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-section">
+      <p class="quote-text">
+        "A criação de um único mundo vem de uma enorme quantidade de fragmentos
+        e caos."
+      </p>
+      <p class="quote-author">— Hayao Miyazaki</p>
+      <img
+        src="img/totoro-friends.png"
+        alt="Totoro amigos"
+        class="totoro-friends"
+      />
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <img src="img/soot-sprite.png" alt="" class="sprite" />
+      <div class="footer-text">
+        <span>Feito por Maria Beatriz Berten 🍃</span>
+        <span class="footer-year">© 2026</span>
+      </div>
+      <img src="img/soot-sprite.png" alt="" class="sprite" />
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
